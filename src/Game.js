@@ -1,11 +1,14 @@
 import React from "react";
 import Player from './components/player.component/Player'
 import './game-style.css'
+import Dice from './components/dice.component/Dice.component'
+import Button from './components/buttons.component/button.component'
 export default class Game extends React.Component {
   constructor(props){
     super(props)
-
+    
     this.state = {
+      playerScore : 0,
 
       players : [
         {
@@ -20,13 +23,18 @@ export default class Game extends React.Component {
         }
         ],
       newGame : false,
-      firstPlayerTurn : false,
+      firstPlayerTurn : true,
   }
-
   }
-
+sumOfDices = (a,b,player) => {
+  
+    return this.setState((prev) => 
+      ({[this.state.players[0]['currentScore']] : prev.players[0].currentScore+1})
+      )
+}
 
   render () {
+    console.log(this.state.players[0])
     return (
       <>
         <div className='game-turn'>
@@ -40,7 +48,8 @@ export default class Game extends React.Component {
           </div>
         </div>
         <div className='game-setting'>
-          <div>Dice</div>
+          <Dice callBack={this.rollDice} sum={this.sumOfDices} currentScore={this.state.players[0]}/>
+          {/* <Button callBack={this.rollDice()}/> */}
         </div>
         </>
     );

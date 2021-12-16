@@ -6,7 +6,6 @@ export default class Player extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <div>
                 <div className="player">
