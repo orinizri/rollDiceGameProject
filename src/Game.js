@@ -2,7 +2,7 @@ import React from "react";
 import Player from './components/player.component/Player'
 import './game-style.css'
 import Dice from './components/dice.component/Dice.component'
-import Button from './components/buttons.component/button.component'
+
 export default class Game extends React.Component {
   constructor(props){
     super(props)
@@ -23,8 +23,19 @@ export default class Game extends React.Component {
   }
   }
 sumOfDices = (a,b) => {
-  console.log("here")
   const player = this.state.firstPlayerTurn ? "player1" : "player2";
+  console.log(a,b)
+  if (a === 6 && b ===6) {
+    return this.setState((PreState) => ({
+      [player] : {
+        ...PreState[player],
+        currentScore : 0,
+
+      },
+      firstPlayerTurn : !(PreState.firstPlayerTurn)
+    })
+    )
+  } else {
     return this.setState((PreState) => ({
       [player] : {
         ...PreState[player],
@@ -32,16 +43,14 @@ sumOfDices = (a,b) => {
       },
     })
     )
-
+  }
 }
 hold = () => {
-
-  console.log("yes!")
   const player = this.state.firstPlayerTurn ? "player1" : "player2";
   this.setState((PreState) => ({
     [player] : {
       ...PreState[player],
-      globalScore : (PreState[player].currentScore),
+      globalScore : (PreState[player].globalScore+PreState[player].currentScore),
       currentScore : 0,
     },
     firstPlayerTurn : !PreState.firstPlayerTurn
@@ -50,7 +59,6 @@ hold = () => {
 
 }
   render () {
-    console.log(this.state.player1)
     return (
       <>
         <div className='game-turn'>
