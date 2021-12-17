@@ -58,7 +58,8 @@ export default class Game extends React.Component {
       console.log(this.state[player].globalScore)
       console.log(this.state.winningScore)
       if (this.state[player].globalScore >= this.state.winningScore) {
-        console.log(`${player} Wins!`)
+        alert(`${player} Wins!`)
+        this.newGame()
       }
     })
   }
@@ -88,10 +89,10 @@ export default class Game extends React.Component {
   render() {
     return (
       <>
-        <div className='game-turn'>
+          < Button text="New Game" getClick={this.newGame}/>
+        <div className='game-turns'>
           <span>Turn:</span>
           {this.state.firstPlayerTurn ? 1 : 2}
-          < Button text="New Game" getClick={this.newGame}/>
         </div>
         <div className="container">
           <div className="game">

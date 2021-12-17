@@ -1,3 +1,12 @@
+#root {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
 .container {
     height: 100%;
     width: 100%;
@@ -7,7 +16,6 @@
     justify-content: center;
     align-items: center;
 }
-
 .game {
     border: 1px solid blue;
     display: flex;
@@ -18,11 +26,12 @@
     height: 100%;
     min-height: 100%;
 }
-.game-turn {
+.game-turns {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid yellow;
 }
 .game-setting {
     display: flex;
@@ -33,4 +42,13 @@
 }
 .final-score-section {
     margin: 5px;
+}
+.player-turn {
+    border: 1px solid purple;
+}
+.new-game {
+    width: 10%;
+    height: 10vh;
+    background-color: white;
+    border: 1px solid #ccc;
 }

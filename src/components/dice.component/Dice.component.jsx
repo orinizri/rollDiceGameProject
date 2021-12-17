@@ -20,7 +20,7 @@ rollDice = () => {
             <div>
                 <div className="dice-result">{this.state.diceOne}-{this.state.diceTwo}</div>
                 <button onClick={() => this.rollDice()}>Roll Dice</button>
-                <button onClick={()=> this.props.hold(this.state.diceOne,this.state.diceTwo)}>hold</button>
+                <button onClick={()=> this.props.hold(this.state.diceOne,this.state.diceTwo)}>Hold</button>
             </div>
         )
     }

@@ -1,5 +1,5 @@
 .player {
-    border: 1px solid red;
+    border: 1px solid transparent;
     min-width: 100vmin;
     height: 100%;
     display: flex;
