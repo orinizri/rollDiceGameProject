@@ -1,5 +1,6 @@
 import React from 'react';
-import './dice-style.css'
+import './dice-style.css';
+
 export default class Dice extends React.Component {
     constructor(props) {
         super(props)
@@ -9,22 +10,17 @@ export default class Dice extends React.Component {
         }
 }
 rollDice = () => {
-    this.setState(() => ({
+    this.setState({
         diceOne : Math.floor((Math.random()*6) + 1),
         diceTwo : Math.floor((Math.random()*6) + 1)
-    }))
-}
-
-componentDidMount = () => {
-    this.rollDice()
-    
+    }, ()=> { this.props.sum(this.state.diceOne,this.state.diceTwo)})
 }
     render() {
         return (
             <div>
-                {this.state.diceOne}-{this.state.diceTwo}
-                {/* <button onClick={this.rollDice}></button> */}
-                <button onClick={(e) => this.props.sum(this.state.diceOne,this.state.diceTwo,this.props.currentScore)}></button>
+                <div className="dice-result">{this.state.diceOne}-{this.state.diceTwo}</div>
+                <button onClick={() => this.rollDice()}>Roll Dice</button>
+                <button onClick={()=> this.props.hold(this.state.diceOne,this.state.diceTwo)}>hold</button>
             </div>
         )
     }

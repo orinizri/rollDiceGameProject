@@ -8,48 +8,63 @@ export default class Game extends React.Component {
     super(props)
     
     this.state = {
-      playerScore : 0,
-
-      players : [
-        {
-          id : 0,
-          currentScore : 9,
-          globalScore : 10
-        },
-        {
+      player1 : {
           id : 1,
-          currentScore : 4,
-          globalScore : 5
-        }
-        ],
+          currentScore : 0,
+          globalScore : 0
+        },
+        player2 : {
+          id : 2,
+          currentScore : 0,
+          globalScore : 0
+        },
       newGame : false,
       firstPlayerTurn : true,
   }
   }
-sumOfDices = (a,b,player) => {
-  
-    return this.setState((prev) => 
-      ({[this.state.players[0]['currentScore']] : prev.players[0].currentScore+1})
-      )
-}
+sumOfDices = (a,b) => {
+  console.log("here")
+  const player = this.state.firstPlayerTurn ? "player1" : "player2";
+    return this.setState((PreState) => ({
+      [player] : {
+        ...PreState[player],
+        currentScore : PreState[player].currentScore+a+b,
+      },
+    })
+    )
 
+}
+hold = () => {
+
+  console.log("yes!")
+  const player = this.state.firstPlayerTurn ? "player1" : "player2";
+  this.setState((PreState) => ({
+    [player] : {
+      ...PreState[player],
+      globalScore : (PreState[player].currentScore),
+      currentScore : 0,
+    },
+    firstPlayerTurn : !PreState.firstPlayerTurn
+  })
+  )
+
+}
   render () {
-    console.log(this.state.players[0])
+    console.log(this.state.player1)
     return (
       <>
         <div className='game-turn'>
           <span>Turn:</span>
-          {this.state.firstPlayerTurn ? 0 : 1}
+          {this.state.firstPlayerTurn ? 1 : 2}
         </div>
         <div className="container">
           <div className="game">
-            < Player id={this.state.players[0].id} currentScore={this.state.players[0].currentScore} globalScore={this.state.players[0].globalScore} />
-            < Player id={this.state.players[1].id} currentScore={this.state.players[1].currentScore} globalScore={this.state.players[1].globalScore} />
+            < Player id={this.state.player1.id} currentScore={this.state.player1.currentScore} globalScore={this.state.player1.globalScore} />
+            < Player id={this.state.player2.id} currentScore={this.state.player2.currentScore} globalScore={this.state.player2.globalScore} />
           </div>
         </div>
         <div className='game-setting'>
-          <Dice callBack={this.rollDice} sum={this.sumOfDices} currentScore={this.state.players[0]}/>
-          {/* <Button callBack={this.rollDice()}/> */}
+          < Dice sum={this.sumOfDices} hold={this.hold}/>
         </div>
         </>
     );
