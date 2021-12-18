@@ -9,7 +9,7 @@ export default class FinalScore extends React.Component {
         return (
             <div className="final-score-section">
                 <label>{this.props.label}</label>
-                <input htmlFor={this.props.label}/>
+                <input defaultValue="100" htmlFor={this.props.label}/>
                 <button type="submit" onClick={(e) => this.props.getOutput(e)}>Submit</button>
             </div>
         )

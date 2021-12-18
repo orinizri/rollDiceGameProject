@@ -92,9 +92,6 @@ export default class Game extends React.Component {
         <div className="white-background"></div>
         <div className="new-game-container">
         < Button text="New Game" getClick={this.newGame}/>
-        <div className='game-turns'>
-          {/* <span>Turn: {this.state.firstPlayerTurn ?  'Player 1' : 'Player 2'}</span> */}
-        </div>
         </div>
         <div className="container">
           <div className="game">
