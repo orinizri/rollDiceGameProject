@@ -19,7 +19,7 @@ body {
     width: 80%;
     height: 80%;
     position: absolute;
-    background-color: rgb(164, 247, 139);
+    background-color: rgb(69, 72, 235);
     z-index: -1;
     opacity: 0.5;
     border-radius: 5px;
@@ -32,12 +32,15 @@ button {
     font-family: 'BioRhyme', serif;
     font-weight: 800;
     font-size: 1.5rem;
-    border: 1px solid transparent;
+    background-color: white;
+    border: 1px solid rgb(255, 255, 255);    
     border-radius: 5px;
     margin: 0px 5px;
 }
-button:hover {
-    background-color: rgb(243, 243, 243);
+button:hover,
+.new-game:hover {
+    background-color: rgb(183, 240, 241);
+    border: 1px solid rgb(255, 255, 255);    
     cursor: pointer;
 }
 .container {
@@ -58,12 +61,6 @@ button:hover {
     height: 100%;
     min-height: 100%;
 }
-/* .game-turns {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
 .game-setting {
     display: flex;
     flex-direction: column;
@@ -74,12 +71,10 @@ button:hover {
     margin: 5px;
 }
 .players-turn {
-    /* border: 3px solid lightpink; */
     background-color: #080235;
-    color:#35e5f1;
+    color:#d9eeff;
 }
 .new-game-container {
-    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,7 +83,7 @@ button:hover {
     width: 35%;
     height: 100%;
     background-color: white;
-    border: 1px solid rgb(19, 19, 19);
+    border: 1px solid rgb(206, 205, 205);
     min-height: 100%;
     min-width: 100%;
     border-radius: 10px;

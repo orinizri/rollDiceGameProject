@@ -1,6 +1,7 @@
 .dice-result {
     text-align: center;
-    color: #251438;
-    min-height: 15%;
+    color: hsl(0, 0%, 100%);
+    min-height: 15vh;
     font-size: 60px;
+    overflow: hidden;
 }
