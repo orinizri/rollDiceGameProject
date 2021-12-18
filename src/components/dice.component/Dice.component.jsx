@@ -23,7 +23,7 @@ rollDice = () => {
     this.setState((preState)=>({
         diceOne : Math.floor((Math.random()*6) + 1),
         diceTwo : Math.floor((Math.random()*6) + 1),
-        diceAnimation: !preState.diceAnimation
+        diceAnimation: true
     }), ()=> { this.props.sum(this.state.diceOne,this.state.diceTwo)})
     
 }
@@ -32,8 +32,8 @@ rollDice = () => {
         return (
             <div>
                 <div className="dice-result">
-                    <span><i className={`fas fa-dice-${Object.keys(this.state.diceToIcon)[this.state.diceOne-1]} ${(this.state.diceAnimation ? '':"roll-dices")}`}></i></span>
-                    <span><i className={`fas fa-dice-${Object.keys(this.state.diceToIcon)[this.state.diceTwo-1]} ${(this.state.diceAnimation ? '':"roll-dices")}`}></i></span>
+                    <span><i className={`fas fa-dice-${Object.keys(this.state.diceToIcon)[this.state.diceOne-1]} ${(this.state.diceAnimation ? 'roll-dices':"")}`}></i></span>
+                    <span><i className={`fas fa-dice-${Object.keys(this.state.diceToIcon)[this.state.diceTwo-1]} ${(this.state.diceAnimation ? 'roll-dices':"")}`}></i></span>
                 </div>
                 <button onClick={() => {this.rollDice()}} onAnimationEnd={() => this.setState({diceAnimation: false})}
                     >Roll Dice{this.state.diceAnimation}</button>
