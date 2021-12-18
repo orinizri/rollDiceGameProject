@@ -8,10 +8,10 @@ export default class Player extends React.Component {
     render() {
         return (
             <div>
-                <div className="player">
-                    <span>{this.props.id}</span>
-                    <span>{this.props.currentScore}</span>
-                    <span>{this.props.globalScore}</span>
+                <div className={`player ${this.props.turn ? 'players-turn' : null}`}>
+                    <span>Player: {this.props.id}</span>
+                    <span>Current Score: {this.props.currentScore}</span>
+                    <span>Final Score: {this.props.globalScore}</span>
                 </div>
             </div>
         )

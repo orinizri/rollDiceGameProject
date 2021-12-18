@@ -1,6 +1,7 @@
 import React from "react";
 import Player from './components/player.component/Player'
 import './game-style.css'
+import './media.css'
 import Dice from './components/dice.component/Dice.component'
 import Button from './components/buttons.component/button.component'
 import FinalScore from './components/finalSccoreConfiguration/finalScoreConfiguration'
@@ -20,7 +21,7 @@ export default class Game extends React.Component {
         globalScore: 0
       },
       firstPlayerTurn: true,
-      winningScore: 10,
+      winningScore: 100,
     }
   }
   sumOfDices = (firstDice, secondDice) => {
@@ -65,7 +66,6 @@ export default class Game extends React.Component {
   }
 
   newGame = () => {
-    console.log("like magic")
     const players = ['player1','player2']
     players.forEach(player => {
       this.setState((PreState) => ({
@@ -89,20 +89,22 @@ export default class Game extends React.Component {
   render() {
     return (
       <>
-          < Button text="New Game" getClick={this.newGame}/>
+        <div className="white-background"></div>
+        <div className="new-game-container">
+        < Button text="New Game" getClick={this.newGame}/>
         <div className='game-turns'>
-          <span>Turn:</span>
-          {this.state.firstPlayerTurn ? 1 : 2}
+          {/* <span>Turn: {this.state.firstPlayerTurn ?  'Player 1' : 'Player 2'}</span> */}
+        </div>
         </div>
         <div className="container">
           <div className="game">
-            < Player id={this.state.player1.id} currentScore={this.state.player1.currentScore} globalScore={this.state.player1.globalScore} />
-            < Player id={this.state.player2.id} currentScore={this.state.player2.currentScore} globalScore={this.state.player2.globalScore} />
+            < Player turn={this.state.firstPlayerTurn} id={this.state.player1.id} currentScore={this.state.player1.currentScore} globalScore={this.state.player1.globalScore} />
+            < Player turn={!this.state.firstPlayerTurn} id={this.state.player2.id} currentScore={this.state.player2.currentScore} globalScore={this.state.player2.globalScore} />
           </div>
         </div>
         <div className='game-setting'>
-          < Dice sum={this.sumOfDices} hold={this.hold} />
-          <FinalScore placeholderText="Please insert Final Score" label="Final Score: " getOutput={this.getOutput}/>
+        < Dice sum={this.sumOfDices} hold={this.hold} />
+        <FinalScore label="Final Score: " getOutput={this.getOutput}/>
         </div>
       </>
     );
