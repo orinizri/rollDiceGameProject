@@ -1,9 +1,6 @@
 import React from 'react';
 import './player-style.css'
 export default class Player extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         return (
