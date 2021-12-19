@@ -56,8 +56,6 @@ export default class Game extends React.Component {
       },
       firstPlayerTurn: !PreState.firstPlayerTurn
     }), ()=> {
-      console.log(this.state[player].globalScore)
-      console.log(this.state.winningScore)
       if (this.state[player].globalScore >= this.state.winningScore) {
         alert(`${player} Wins!`)
         this.newGame()

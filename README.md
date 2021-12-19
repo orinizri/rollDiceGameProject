@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+<div align="center" id="top"> 
+  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.artofit.org%2Fimage-gallery%2Fhawaiian-background%2F&psig=AOvVaw03W_J8QBDEMMf6DWKrq6Ux&ust=1639989032381000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJCe7K-57_QCFQAAAAAdAAAAABAD" alt="rollDiceGameProject" />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  &#xa0;
 
-## Available Scripts
+  <!-- <a href="https://rollDiceGameProject.netlify.app">Demo</a> -->
+</div>
 
-In the project directory, you can run:
+<h1 align="center">rollDiceGameProject</h1>
 
-### `npm start`
+<p align="center">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/orinizri/rollDiceGameProject?color=56BEB8">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/orinizri/rollDiceGameProject?color=56BEB8">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/orinizri/rollDiceGameProject?color=56BEB8">
 
-### `npm test`
+  <img alt="License" src="https://img.shields.io/github/license/orinizri/rollDiceGameProject?color=56BEB8">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</p>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="#memo-license">License</a> &#xa0; | &#xa0;
+  <a href="https://github.com/orinizri" target="_blank">Author</a>
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## :dart: About The Game ##
 
-### `npm run eject`
+The game has 2 players, playing in rounds.
+In each turn, a player rolls 2 dices as many times as he wishes.
+Each result will get added to his round's score.
+But if the player rolls a double six all his round's score gets lost.
+After that, its the next player's turn.
+A player can choose to 'Hold', which means that his round's score
+gets added to his global score. After that, its the next players turn.The first player to reach 100 points wins.
+The input field where players can set the winning score, so that
+they can change the predefined score of 100.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## :rocket: Technologies ##
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The following tools were used in this project:
+- [React](https://pt-br.reactjs.org/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## :checkered_flag: Starting ##
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+# Clone this project
+$ git clone https://github.com/orinizri/rollDiceGameProject
 
-## Learn More
+# Access
+$ cd rollDiceGameProject
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Install dependencies
+$ yarn
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Run the project
+$ yarn start
 
-### Code Splitting
+# The server will initialize in the <http://localhost:3000>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## :memo: License ##
 
-### Analyzing the Bundle Size
+Made with :heart: by <a href="https://github.com/orinizri" target="_blank">Ori</a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+&#xa0;
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="#top">Back to top</a>
